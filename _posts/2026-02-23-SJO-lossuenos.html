@@ -1,0 +1,1463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arrival Travel Brief — SJO to Los Sueños Resort &amp; Marina</title>
+  <style>
+    /* ── Reset & Base ─────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream:      #faf9f7;
+      --white:      #ffffff;
+      --sand:       #f0ebe3;
+      --border:     #e2ddd7;
+      --navy:       #1b2e45;
+      --navy-light: #243d5c;
+      --gold:       #b8922a;
+      --gold-light: #f5ecd4;
+      --teal:       #1d6e70;
+      --teal-light: #e8f4f4;
+      --red:        #b03232;
+      --red-light:  #fdf0f0;
+      --amber:      #c27c00;
+      --amber-light:#fdf5e6;
+      --green:      #2d6a4f;
+      --green-light:#edf5f0;
+      --text:       #2c2c2c;
+      --text-muted: #6b6560;
+      --text-light: #9c9590;
+      --radius:     10px;
+      --shadow-sm:  0 1px 4px rgba(0,0,0,.07);
+      --shadow-md:  0 4px 20px rgba(0,0,0,.08);
+      --shadow-lg:  0 8px 40px rgba(0,0,0,.10);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--cream);
+      color: var(--text);
+      font-family: 'Georgia', 'Times New Roman', serif;
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    /* ── Typography ───────────────────────────────────────────────── */
+    h1, h2, h3, h4 {
+      font-family: 'Georgia', serif;
+      color: var(--navy);
+      line-height: 1.3;
+    }
+    p { margin-bottom: .9rem; }
+    strong { color: var(--navy); font-weight: 700; }
+    em { color: var(--text-muted); }
+
+    a { color: var(--teal); text-decoration: none; border-bottom: 1px solid rgba(29,110,112,.3); transition: border-color .2s; }
+    a:hover { border-color: var(--teal); }
+
+    /* ── Layout ───────────────────────────────────────────────────── */
+    .page-wrap {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 0 24px 60px;
+    }
+
+    /* ── Header ───────────────────────────────────────────────────── */
+    .report-header {
+      background: linear-gradient(160deg, var(--navy) 0%, var(--navy-light) 100%);
+      color: #fff;
+      padding: 54px 48px 44px;
+      border-bottom: 4px solid var(--gold);
+    }
+    .header-tag {
+      font-family: 'Arial', sans-serif;
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+    .report-header h1 {
+      color: #fff;
+      font-size: 2.1rem;
+      font-weight: normal;
+      margin-bottom: 10px;
+    }
+    .report-header .subtitle {
+      color: rgba(255,255,255,.72);
+      font-size: 1.05rem;
+      font-style: italic;
+      margin-bottom: 28px;
+    }
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 28px;
+      margin-top: 24px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,.15);
+    }
+    .meta-item {
+      font-family: 'Arial', sans-serif;
+      font-size: 12px;
+    }
+    .meta-item .label {
+      color: rgba(255,255,255,.5);
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      display: block;
+      margin-bottom: 2px;
+      font-size: 10px;
+    }
+    .meta-item .value { color: rgba(255,255,255,.9); font-weight: 600; }
+
+    /* ── Alert Banner ─────────────────────────────────────────────── */
+    .alert-critical {
+      background: var(--red-light);
+      border-left: 5px solid var(--red);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 18px 22px;
+      margin: 28px 0 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+    .alert-critical .icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 1px; }
+    .alert-critical .body h4 {
+      color: var(--red);
+      font-family: 'Arial', sans-serif;
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .alert-critical .body p {
+      color: #4a1a1a;
+      font-size: .95rem;
+      margin: 0;
+    }
+    .alert-critical .body p strong { color: #4a1a1a; }
+
+    .alert-amber {
+      background: var(--amber-light);
+      border-left: 5px solid var(--amber);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 18px 22px;
+      margin: 14px 0 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+    .alert-amber .icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 1px; }
+    .alert-amber .body h4 {
+      color: var(--amber);
+      font-family: 'Arial', sans-serif;
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .alert-amber .body p {
+      color: #4a3200;
+      font-size: .95rem;
+      margin: 0;
+    }
+    .alert-amber .body p strong { color: #4a3200; }
+
+    /* ── Section Wrapper ──────────────────────────────────────────── */
+    .section {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+      margin-top: 28px;
+      overflow: hidden;
+    }
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 22px 28px;
+      border-bottom: 1px solid var(--border);
+      background: var(--white);
+    }
+    .section-number {
+      background: var(--navy);
+      color: var(--gold);
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Arial', sans-serif;
+      font-size: .85rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .section-header h2 {
+      font-size: 1.18rem;
+      font-weight: normal;
+    }
+    .section-body {
+      padding: 26px 28px;
+    }
+
+    /* ── Route Timeline ───────────────────────────────────────────── */
+    .route-timeline { list-style: none; }
+    .route-step {
+      display: flex;
+      gap: 20px;
+      padding-bottom: 24px;
+      position: relative;
+    }
+    .route-step:last-child { padding-bottom: 0; }
+    .step-marker {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex-shrink: 0;
+    }
+    .step-dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--navy);
+      border: 3px solid var(--white);
+      box-shadow: 0 0 0 2px var(--navy);
+      flex-shrink: 0;
+      margin-top: 4px;
+    }
+    .step-dot.gold { background: var(--gold); box-shadow: 0 0 0 2px var(--gold); }
+    .step-dot.teal { background: var(--teal); box-shadow: 0 0 0 2px var(--teal); }
+    .step-line {
+      width: 2px;
+      flex-grow: 1;
+      background: var(--border);
+      margin-top: 4px;
+    }
+    .step-content { flex-grow: 1; }
+    .step-label {
+      font-family: 'Arial', sans-serif;
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      margin-bottom: 2px;
+    }
+    .step-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+    .step-desc { font-size: .9rem; color: var(--text-muted); margin-bottom: 0; }
+    .step-badge {
+      display: inline-block;
+      background: var(--sand);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      font-family: 'Arial', sans-serif;
+      font-size: .72rem;
+      font-weight: 600;
+      padding: 2px 10px;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+    .step-badge.alert { background: var(--red-light); border-color: var(--red); color: var(--red); }
+
+    /* ── Info Grid ────────────────────────────────────────────────── */
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    @media (max-width: 580px) { .info-grid { grid-template-columns: 1fr; } }
+    .info-card {
+      background: var(--sand);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px 20px;
+    }
+    .info-card .card-label {
+      font-family: 'Arial', sans-serif;
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      margin-bottom: 6px;
+    }
+    .info-card .card-value {
+      font-size: 1.05rem;
+      color: var(--navy);
+      font-weight: 700;
+    }
+    .info-card .card-detail {
+      font-size: .85rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    /* ── Time Table ───────────────────────────────────────────────── */
+    .time-table { width: 100%; border-collapse: collapse; }
+    .time-table th {
+      background: var(--navy);
+      color: rgba(255,255,255,.9);
+      font-family: 'Arial', sans-serif;
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: 12px 16px;
+      text-align: left;
+    }
+    .time-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+      font-size: .92rem;
+      vertical-align: top;
+    }
+    .time-table tr:last-child td { border-bottom: none; }
+    .time-table tr:nth-child(even) td { background: var(--sand); }
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-family: 'Arial', sans-serif;
+      font-size: .72rem;
+      font-weight: 700;
+    }
+    .status-badge.green { background: var(--green-light); color: var(--green); }
+    .status-badge.amber { background: var(--amber-light); color: var(--amber); }
+    .status-badge.red   { background: var(--red-light);   color: var(--red); }
+
+    /* ── Highlight Callout ────────────────────────────────────────── */
+    .callout {
+      border-radius: var(--radius);
+      padding: 20px 22px;
+      margin: 18px 0;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .callout.teal { background: var(--teal-light); border: 1px solid #b0d4d5; }
+    .callout.gold { background: var(--gold-light); border: 1px solid #dfc98a; }
+    .callout.green { background: var(--green-light); border: 1px solid #a7d4ba; }
+    .callout.red { background: var(--red-light); border: 1px solid #dba5a5; }
+    .callout .callout-icon { font-size: 1.3rem; flex-shrink: 0; }
+    .callout .callout-body { flex-grow: 1; }
+    .callout .callout-body strong { color: var(--navy); }
+    .callout .callout-body p { margin: 0; font-size: .93rem; }
+
+    /* ── Toll Pills ───────────────────────────────────────────────── */
+    .toll-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .toll-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: var(--sand);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 16px;
+    }
+    .toll-num {
+      background: var(--gold);
+      color: #fff;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Arial', sans-serif;
+      font-size: .78rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .toll-text { flex-grow: 1; }
+    .toll-text strong { display: block; font-size: .93rem; color: var(--navy); }
+    .toll-text span { font-size: .83rem; color: var(--text-muted); }
+
+    /* ── Tips List ────────────────────────────────────────────────── */
+    .tips-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .tip-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 14px 16px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }
+    .tip-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 2px; }
+    .tip-text { font-size: .92rem; color: var(--text); }
+    .tip-text strong { color: var(--navy); }
+
+    /* ── Weather Widget ───────────────────────────────────────────── */
+    .weather-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+    @media (max-width: 580px) { .weather-row { grid-template-columns: 1fr 1fr; } }
+    .weather-card {
+      background: linear-gradient(145deg, var(--teal-light), #d4edee);
+      border: 1px solid #b0d4d5;
+      border-radius: var(--radius);
+      padding: 16px 18px;
+      text-align: center;
+    }
+    .weather-card .w-icon { font-size: 1.8rem; margin-bottom: 6px; }
+    .weather-card .w-value {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--teal);
+      display: block;
+    }
+    .weather-card .w-label {
+      font-family: 'Arial', sans-serif;
+      font-size: .7rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    /* ── Emergency Box ────────────────────────────────────────────── */
+    .emergency-box {
+      background: var(--navy);
+      border-radius: var(--radius);
+      padding: 22px 24px;
+      color: rgba(255,255,255,.88);
+    }
+    .emergency-box h4 {
+      color: var(--gold);
+      font-family: 'Arial', sans-serif;
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .emergency-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    @media (max-width: 480px) { .emergency-grid { grid-template-columns: 1fr; } }
+    .emergency-item .e-label {
+      font-family: 'Arial', sans-serif;
+      font-size: .72rem;
+      color: rgba(255,255,255,.5);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 2px;
+    }
+    .emergency-item .e-value {
+      font-size: .97rem;
+      font-weight: 700;
+      color: rgba(255,255,255,.95);
+      font-family: 'Arial', sans-serif;
+    }
+
+    /* ── Summary / Pre-Departure Checklist ───────────────────────── */
+    .summary-section {
+      background: linear-gradient(150deg, #1b2e45 0%, #243d5c 100%);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-md);
+      margin-top: 28px;
+      padding: 34px 32px;
+      color: rgba(255,255,255,.88);
+    }
+    .summary-section h2 {
+      color: var(--gold);
+      font-size: 1.2rem;
+      font-weight: normal;
+      letter-spacing: .04em;
+      margin-bottom: 22px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(255,255,255,.15);
+    }
+    .summary-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .summary-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      font-size: .93rem;
+      color: rgba(255,255,255,.88);
+    }
+    .summary-section strong {
+      color: #ffffff;
+      font-weight: 700;
+    }
+    .summary-item .check {
+      color: var(--gold);
+      font-size: 1rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* ── Sources Section ──────────────────────────────────────────── */
+    .sources-section {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+      margin-top: 28px;
+      overflow: hidden;
+    }
+    .sources-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 18px 28px;
+      border-bottom: 1px solid var(--border);
+      background: var(--sand);
+    }
+    .sources-header h2 {
+      font-size: 1rem;
+      font-weight: normal;
+      color: var(--text-muted);
+      font-family: 'Arial', sans-serif;
+      letter-spacing: .02em;
+    }
+    .sources-body { padding: 22px 28px; }
+    .sources-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px 28px;
+    }
+    @media (max-width: 620px) { .sources-grid { grid-template-columns: 1fr; } }
+    .source-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      padding: 7px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: .83rem;
+    }
+    .source-item:last-child { border-bottom: none; }
+    .source-category {
+      font-family: 'Arial', sans-serif;
+      font-size: .65rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      background: var(--sand);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      padding: 1px 6px;
+      white-space: nowrap;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+    .source-link a { color: var(--teal); font-size: .83rem; line-height: 1.4; }
+    .source-link .source-pub {
+      display: block;
+      font-family: 'Arial', sans-serif;
+      font-size: .7rem;
+      color: var(--text-light);
+      margin-top: 1px;
+    }
+
+    /* ── Footer ───────────────────────────────────────────────────── */
+    .report-footer {
+      margin-top: 36px;
+      padding: 22px 0;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-family: 'Arial', sans-serif;
+      font-size: .75rem;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    /* ── Divider ──────────────────────────────────────────────────── */
+    .gold-rule {
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold), transparent);
+      margin: 22px 0;
+      opacity: .5;
+    }
+
+    /* ── Print / Responsive ───────────────────────────────────────── */
+    @media print {
+      body { background: #fff; }
+      .section { box-shadow: none; }
+      .page-wrap { padding: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════ HEADER ═══════════════════════ -->
+<div class="report-header">
+  <p class="header-tag">Arrival Travel Brief &nbsp;·&nbsp; Prepared Exclusively for You</p>
+  <h1>SJO Airport &rarr; Los Sueños Resort &amp; Marina</h1>
+  <p class="subtitle">Comprehensive Road &amp; Arrival Conditions Report &mdash; Costa Rica</p>
+
+  <div class="meta-row">
+    <div class="meta-item">
+      <span class="label">Report Date</span>
+      <span class="value">February 23, 2026</span>
+    </div>
+    <div class="meta-item">
+      <span class="label">Route Distance</span>
+      <span class="value">~53 miles (85 km)</span>
+    </div>
+    <div class="meta-item">
+      <span class="label">Est. Drive Time (off-peak)</span>
+      <span class="value">1 hr 15 min &ndash; 1 hr 30 min</span>
+    </div>
+    <div class="meta-item">
+      <span class="label">Season</span>
+      <span class="value">Peak Dry Season &#9728;</span>
+    </div>
+    <div class="meta-item">
+      <span class="label">Alert Level</span>
+      <span class="value" style="color:#f5c842;">&#9888; Active Road Work</span>
+    </div>
+  </div>
+
+  <!-- Critical Alert Inside Header -->
+  <div class="alert-critical" style="margin-top:28px;">
+    <div class="icon">&#128680;</div>
+    <div class="body">
+      <h4>Now In Effect &mdash; Tárcoles Bridge Single-Lane Traffic</h4>
+      <p>As of today, Monday February 23, 2026, the Tárcoles River Bridge (Route 34) is operating under <strong>single-lane alternating traffic</strong>. This is a mandatory crossing on the way to Herradura. Expect delays of 30 minutes to over 1 hour. Full details in Section 3 below. Plan your departure accordingly.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════ PAGE BODY ═══════════════════════ -->
+<div class="page-wrap">
+
+  <!-- ── SECTION 1: ROUTE OVERVIEW ── -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-number">1</div>
+      <h2>Your Route &mdash; Step-by-Step Overview</h2>
+    </div>
+    <div class="section-body">
+
+      <div class="info-grid" style="margin-bottom:26px;">
+        <div class="info-card">
+          <div class="card-label">Total Distance</div>
+          <div class="card-value">~53 miles (85 km)</div>
+          <div class="card-detail">Mostly modern toll highway</div>
+        </div>
+        <div class="info-card">
+          <div class="card-label">Typical Drive Time</div>
+          <div class="card-value">1 hr 15 min &ndash; 2 hrs</div>
+          <div class="card-detail">Varies with traffic &amp; bridge delay</div>
+        </div>
+        <div class="info-card">
+          <div class="card-label">Primary Highways</div>
+          <div class="card-value">Route 1 &rarr; Route 27 &rarr; Route 34</div>
+          <div class="card-detail">Well-signed, GPS-friendly</div>
+        </div>
+        <div class="info-card">
+          <div class="card-label">Toll Plazas</div>
+          <div class="card-value">4 main + 1 exit ramp</div>
+          <div class="card-detail">Cash &amp; credit cards accepted</div>
+        </div>
+      </div>
+
+      <ul class="route-timeline">
+
+        <li class="route-step">
+          <div class="step-marker">
+            <div class="step-dot gold"></div>
+            <div class="step-line"></div>
+          </div>
+          <div class="step-content">
+            <div class="step-label">Start &mdash; Mile 0</div>
+            <div class="step-title">Juan Santamaría International Airport (SJO)</div>
+            <p class="step-desc">Exit the arrivals terminal and collect your rental vehicle. Before departing, confirm your navigation app is loaded with your destination: <em>"Los Sueños Resort and Marina, Herradura."</em> We strongly recommend using <strong>Waze</strong> — the navigation app of choice for locals and the most reliable for real-time alerts.</p>
+            <span class="step-badge">Alajuela, Greater San José Area</span>
+          </div>
+        </li>
+
+        <li class="route-step">
+          <div class="step-marker">
+            <div class="step-dot"></div>
+            <div class="step-line"></div>
+          </div>
+          <div class="step-content">
+            <div class="step-label">Miles 0 – 5 &nbsp;·&nbsp; ~10 min</div>
+            <div class="step-title">Route 1 — General Cañas Highway (West)</div>
+            <p class="step-desc">Exit the airport heading west on Route 1, the General Cañas Highway. This short segment passes through the western suburbs of San José and connects you to Route 27. Watch for the large <strong>Dos Pinos dairy factory</strong> on your right — approximately 200 yards past it, you will see the exit sign for <strong>Orotina and Jacó</strong>. Take this exit.</p>
+            <span class="step-badge">Urban / Suburban &mdash; 60 km/h speed limit</span>
+          </div>
+        </li>
+
+        <li class="route-step">
+          <div class="step-marker">
+            <div class="step-dot"></div>
+            <div class="step-line"></div>
+          </div>
+          <div class="step-content">
+            <div class="step-label">Miles 5 – 43 &nbsp;·&nbsp; ~50 – 65 min</div>
+            <div class="step-title">Route 27 — Autopista Próspero Fernández / San José–Caldera Highway</div>
+            <p class="step-desc">This is the main leg of your journey — a modern, well-maintained toll highway. Route 27 climbs briefly through the western suburbs past Escazú and Santa Ana, then descends dramatically through a mountain pass toward the Pacific lowlands. The scenery is spectacular. Follow signs continuously marked <strong>"Caldera"</strong> and <strong>"Jacó / Puntarenas."</strong></p>
+            <p class="step-desc">You will pass through <strong>four toll plazas</strong> (see Section 5). The towns of <strong>Atenas</strong> and <strong>Orotina</strong> are visible from the highway. Keep to the speed limit — <strong>traffic enforcement cameras and police are active on this route.</strong></p>
+            <span class="step-badge">Toll Highway &mdash; 80–100 km/h speed limit</span>
+          </div>
+        </li>
+
+        <li class="route-step">
+          <div class="step-marker">
+            <div class="step-dot"></div>
+            <div class="step-line"></div>
+          </div>
+          <div class="step-content">
+            <div class="step-label">Miles 43 – 48 &nbsp;·&nbsp; ~10 min (+ potential bridge delay)</div>
+            <div class="step-title">Route 34 — Costanera Sur (South) + Tárcoles Bridge</div>
+            <p class="step-desc">After the final toll area near Pozón/Orotina, exit Route 27 and merge onto <strong>Route 34 (Costanera Sur)</strong> heading south toward Jacó. Shortly after merging, you will cross the <strong>Tárcoles River Bridge</strong> — internationally famous as the "Crocodile Bridge," where massive American crocodiles rest on the riverbanks below.</p>
+            <div class="step-badge alert">&#128680; Active Construction &mdash; Single Lane Now In Effect. Add 30–60+ min wait.</div>
+          </div>
+        </li>
+
+        <li class="route-step">
+          <div class="step-marker">
+            <div class="step-dot"></div>
+            <div class="step-line"></div>
+          </div>
+          <div class="step-content">
+            <div class="step-label">Miles 48 – 53 &nbsp;·&nbsp; ~8 min</div>
+            <div class="step-title">Herradura Exit &rarr; Los Sueños Entrance</div>
+            <p class="step-desc">Approximately 5 miles south of the bridge, watch for signs on the <strong>right side</strong> of Route 34 reading <strong>"Playa Herradura"</strong> and <strong>"Los Sueños."</strong> Turn right and follow the road approximately 2 miles to the resort entrance. The property is gated with 24/7 security — have your reservation confirmation ready.</p>
+            <span class="step-badge">Arrival &mdash; Herradura, Garabito, Puntarenas</span>
+          </div>
+        </li>
+
+        <li class="route-step" style="padding-bottom:0;">
+          <div class="step-marker">
+            <div class="step-dot teal"></div>
+          </div>
+          <div class="step-content">
+            <div class="step-label">Destination</div>
+            <div class="step-title">Los Sueños Resort &amp; Marina — Playa Herradura</div>
+            <p class="step-desc" style="margin:0;">Welcome. You have arrived at one of Central America's premier resort destinations.</p>
+          </div>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+
+  <!-- ── SECTION 2: BEST TIME TO DEPART ── -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-number">2</div>
+      <h2>Recommended Departure Times from SJO</h2>
+    </div>
+    <div class="section-body">
+
+      <p>Traffic on this route is predictable once you know the patterns. The San José metro area experiences significant rush-hour congestion. The table below summarizes your options by time window and day of week.</p>
+
+      <table class="time-table">
+        <thead>
+          <tr>
+            <th>Departure Window</th>
+            <th>Day(s)</th>
+            <th>Conditions</th>
+            <th>Rating</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>9:30 AM – 1:00 PM</strong></td>
+            <td>Mon – Fri</td>
+            <td>Between morning rush and afternoon build-up. Ideal window. Route 27 flows freely, bridge queue manageable.</td>
+            <td><span class="status-badge green">&#10003; Best</span></td>
+          </tr>
+          <tr>
+            <td><strong>7:00 AM – 9:30 AM</strong></td>
+            <td>Mon – Fri</td>
+            <td>Morning rush hour active. Route 27 westbound slow through Escazú and Santa Ana. Allow extra 20–30 min.</td>
+            <td><span class="status-badge amber">&#9888; Fair</span></td>
+          </tr>
+          <tr>
+            <td><strong>9:00 AM – Noon</strong></td>
+            <td>Sat – Sun</td>
+            <td>Weekend beach traffic begins building but still manageable. Ideal morning window on weekends.</td>
+            <td><span class="status-badge green">&#10003; Good</span></td>
+          </tr>
+          <tr>
+            <td><strong>1:30 PM – 3:30 PM</strong></td>
+            <td>Mon – Thu</td>
+            <td>Slightly elevated midday traffic. Acceptable but not optimal. Bridge queue grows in afternoon.</td>
+            <td><span class="status-badge amber">&#9888; Fair</span></td>
+          </tr>
+          <tr>
+            <td><strong>3:30 PM – 7:30 PM</strong></td>
+            <td>Mon – Fri</td>
+            <td>Peak outbound rush hour. Heavy congestion throughout. Bridge delays compound significantly. Avoid.</td>
+            <td><span class="status-badge red">&#10005; Avoid</span></td>
+          </tr>
+          <tr>
+            <td><strong>3:00 PM – 8:00 PM</strong></td>
+            <td>Friday</td>
+            <td>Worst traffic of the week. San José residents flood Route 27 heading to the coast for the weekend. Add 60–90+ min.</td>
+            <td><span class="status-badge red">&#10005; Avoid</span></td>
+          </tr>
+          <tr>
+            <td><strong>1:00 PM – 7:00 PM</strong></td>
+            <td>Sunday</td>
+            <td>Route 27 outbound lanes CLOSED on select Sundays (all lanes reversed toward San José). Departure toward coast is impossible during this window on affected Sundays.</td>
+            <td><span class="status-badge red">&#10005; Check First</span></td>
+          </tr>
+          <tr>
+            <td><strong>After 7:30 PM</strong></td>
+            <td>Any Day</td>
+            <td>Traffic is light. However, night driving on Costa Rican roads is not recommended for first-time visitors. Only if necessary.</td>
+            <td><span class="status-badge amber">&#9888; Caution</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="callout gold" style="margin-top:20px;">
+        <div class="callout-icon">&#9733;</div>
+        <div class="callout-body">
+          <p><strong>Our Recommendation:</strong> Aim to depart SJO between <strong>9:30 AM and 12:30 PM on any weekday</strong>, or before noon on weekends. This single decision will have the greatest positive impact on the quality of your arrival experience. Account for the Tárcoles Bridge delay (currently active) by adding at least 45 minutes to your estimated arrival time.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── SECTION 3: ROAD WORK & ALERTS ── -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-number">3</div>
+      <h2>Road Work, Closures &amp; Active Alerts</h2>
+    </div>
+    <div class="section-body">
+
+      <!-- Alert 1 -->
+      <div style="background:var(--red-light); border:1px solid #dba5a5; border-radius:var(--radius); padding:22px 24px; margin-bottom:22px;">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
+          <span style="font-size:1.2rem;">&#128680;</span>
+          <h3 style="color:var(--red); font-size:1rem;">CRITICAL &mdash; Tárcoles Bridge Single-Lane Construction</h3>
+        </div>
+        <p style="font-size:.93rem; margin-bottom:10px;"><strong>Location:</strong> Tárcoles River Bridge on Route 34 (Costanera Sur) — mandatory crossing between Route 27 and Herradura.</p>
+        <p style="font-size:.93rem; margin-bottom:10px;"><strong>Status:</strong> <strong style="color:var(--red);">NOW IN EFFECT</strong> as of today, Monday February 23, 2026. Runs through March 27, 2026 (initial phase). Both lanes fully open during Holy Week (March 28 – April 5). Single-lane resumes May 4–9, 2026.</p>
+        <p style="font-size:.93rem; margin-bottom:10px;"><strong>Condition:</strong> Alternating single-lane traffic managed by on-site traffic police. One direction moves at a time; the other direction waits. Speed limit reduced to 30 km/h on the bridge structure.</p>
+        <p style="font-size:.93rem; margin-bottom:10px;"><strong>Expected delays:</strong> 30 minutes to over 1 hour, particularly in late mornings and afternoons, weekends, and holidays. Build-up can be significant in peak dry season (current period).</p>
+        <p style="font-size:.93rem; margin-bottom:10px;"><strong>Night closures (both lanes fully closed):</strong> Between <strong>March 15 and April 20, 2026</strong>, both lanes will close entirely from <strong>9:00 PM to 5:00 AM</strong> on announced nights for seismic isolator installation. Specific nights will be pre-announced by MOPT. If traveling late during this window, verify bridge status before departure.</p>
+        <p style="font-size:.93rem; margin-bottom:0;"><strong>Project context:</strong> This is a $6.7 million structural rehabilitation funded by the Central American Bank for Economic Integration. The project is currently 61% complete and essential for the long-term safety of this critical coastal corridor. Sources: <a href="https://ticotimes.net/2026/02/21/one-lane-travel-returns-to-costa-ricas-tarcoles-bridge" target="_blank" rel="noopener">Tico Times</a> &bull; <a href="https://qcostarica.com/ruta-34-over-tarcoles-river-bridge-with-regulated-traffic-starting-feb-23/" target="_blank" rel="noopener">Q Costa Rica</a> &bull; <a href="https://www.travelandtourworld.com/news/article/tarcoles-bridge-construction-update-2026-one-lane-travel-returns-to-costa-ricas-iconic-route-34/" target="_blank" rel="noopener">Travel &amp; Tour World</a></p>
+      </div>
+
+      <!-- Alert 2 -->
+      <div style="background:var(--amber-light); border:1px solid #dfc98a; border-radius:var(--radius); padding:22px 24px; margin-bottom:22px;">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
+          <span style="font-size:1.2rem;">&#9200;</span>
+          <h3 style="color:var(--amber); font-size:1rem;">RECURRING &mdash; Route 27 Sunday Lane Reversal Program</h3>
+        </div>
+        <p style="font-size:.93rem; margin-bottom:10px;"><strong>Yesterday's activation concluded:</strong> Sunday February 22 saw a full reversal activation (outbound lanes closed 1:00 PM – 7:00 PM) for the back-to-school return. That activation has now concluded. Route 27 operates normally in both directions today, Monday February 23.</p>
+        <p style="font-size:.93rem; margin-bottom:10px;"><strong>Be aware for future Sundays:</strong> MOPT activates this program on select Sunday afternoons throughout the year when high return volumes are expected. On those Sundays, all outbound lanes (toward Pacific coast) are closed from approximately <strong>1:00 PM – 7:00 PM</strong>, with all lanes reversed toward San José 2:00 PM – 6:00 PM. Affected segment: 47 km between Pozón and the Ciudad Colón toll plaza.</p>
+        <p style="font-size:.93rem; margin-bottom:0;"><strong>Alternate routes on affected Sundays:</strong> Route 3 (Atenas – Aguacate – Orotina) or Route 1 via Cambronero — both narrow and winding, add 40–60 minutes. Sources: <a href="https://www.nacion.com/el-pais/ruta-27-tendra-reversibilidad-este-domingo-22-de/XCOW5HXDG5FWXHTTBTUDCAHXNQ/story/" target="_blank" rel="noopener">La Nación (Feb 22, 2026)</a> &bull; <a href="https://ticotimes.net/2026/02/17/route-27-sets-reversible-lanes-for-sunday-return-traffic" target="_blank" rel="noopener">Tico Times (Feb 17, 2026)</a></p>
+      </div>
+
+      <!-- Alert 3 -->
+      <div style="background:var(--teal-light); border:1px solid #b0d4d5; border-radius:var(--radius); padding:22px 24px;">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
+          <span style="font-size:1.2rem;">&#8505;</span>
+          <h3 style="color:var(--teal); font-size:1rem;">MONITORING &mdash; Route 27 Long-Term Widening Project</h3>
+        </div>
+        <p style="font-size:.93rem; margin-bottom:10px;"><strong>Status:</strong> Costa Rica's National Development Plan (2023–2026) includes a major widening of Route 27 from San José to the Pacific coast. Phase 1 focuses on the segment near San José (from the National Gymnasium to Siquiares). A new overpass is planned as part of this phase.</p>
+        <p style="font-size:.93rem; margin-bottom:0;"><strong>Impact for February 2026:</strong> No confirmed active lane closures attributable to this project were found for your travel dates. The project is still in contract renegotiation with the highway concessionaire Globalvia. Monitor Waze for any newly announced work zones.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── SECTION 4: WEATHER ── -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-number">4</div>
+      <h2>Weather Conditions &mdash; February 2026</h2>
+    </div>
+    <div class="section-body">
+
+      <div class="callout red" style="margin-bottom:16px;">
+        <div class="callout-icon">&#127788;</div>
+        <div class="callout-body">
+          <p><strong>Weather Advisory &mdash; Cold Front No. 17 (Empuje Frío No. 17) — Day 2</strong><br/>
+          Cold Front No. 17 moved through Costa Rica yesterday (February 22) and its tail end is still being felt today. Expect <strong>elevated winds and variable cloudiness</strong> on the Central Valley sections of Route 27 this morning, easing through the day. Conditions on Herradura Bay may still be choppy — confirm any offshore activities with your operator. Dry-season weather is forecast to fully return by <strong>Tuesday, February 24</strong>. Source: <a href="https://www.imn.ac.cr/avisos-meteorologicos" target="_blank" rel="noopener">IMN</a> &bull; <a href="https://www.nacion.com/sucesos/empuje-frio-elevara-vientos-hasta-85-kmh-y/H4RESPDIMZFFFLYRO2APUFSMCY/story/" target="_blank" rel="noopener">La Nación (Feb 22, 2026)</a></p>
+        </div>
+      </div>
+
+      <div class="callout green" style="margin-bottom:22px;">
+        <div class="callout-icon">&#9728;</div>
+        <div class="callout-body">
+          <p><strong>February is one of the finest months of the year to visit Costa Rica's Pacific coast.</strong> You are arriving during peak dry season. The current cold front is a brief, temporary event — conditions are expected to return to sunny and dry by mid-week.</p>
+        </div>
+      </div>
+
+      <div class="weather-row">
+        <div class="weather-card">
+          <div class="w-icon">&#127777;</div>
+          <span class="w-value">85–95°F</span>
+          <div class="w-label">Daytime High<br/>(29–35°C)</div>
+        </div>
+        <div class="weather-card">
+          <div class="w-icon">&#9748;</div>
+          <span class="w-value">~0.4 inches</span>
+          <div class="w-label">Avg. Monthly Rainfall<br/>(driest month of year)</div>
+        </div>
+        <div class="weather-card">
+          <div class="w-icon">&#127774;</div>
+          <span class="w-value">8–10+ hours</span>
+          <div class="w-label">Daily Sunshine<br/>High UV — protect yourself</div>
+        </div>
+        <div class="weather-card">
+          <div class="w-icon">&#127758;</div>
+          <span class="w-value">~68%</span>
+          <div class="w-label">Relative Humidity<br/>Comfortable with sea breeze</div>
+        </div>
+        <div class="weather-card">
+          <div class="w-icon">&#127751;</div>
+          <span class="w-value">75–78°F</span>
+          <div class="w-label">Overnight Low<br/>(24–26°C)</div>
+        </div>
+        <div class="weather-card">
+          <div class="w-icon">&#9970;</div>
+          <span class="w-value">Calm</span>
+          <div class="w-label">Herradura Bay<br/>Naturally sheltered anchorage</div>
+        </div>
+      </div>
+
+      <div class="gold-rule"></div>
+
+      <h3 style="font-size:1rem; margin-bottom:12px;">Weather &amp; Your Drive</h3>
+      <ul class="tips-list">
+        <li class="tip-item">
+          <div class="tip-icon">&#9728;</div>
+          <div class="tip-text"><strong>Road conditions are excellent in February.</strong> Rain-slicked roads, flash flooding, and mudslides — significant concerns during the May–October rainy season — are essentially non-factors in February. Route 27 and Route 34 will be dry and in good condition.</div>
+        </li>
+        <li class="tip-item">
+          <div class="tip-icon">&#127774;</div>
+          <div class="tip-text"><strong>Sun glare during the afternoon drive.</strong> Traveling westward toward the coast in the afternoon means driving into the sun. A good pair of polarized sunglasses is recommended, and your vehicle's sun visors will be useful.</div>
+        </li>
+        <li class="tip-item">
+          <div class="tip-icon">&#9889;</div>
+          <div class="tip-text"><strong>Tropical weather can surprise.</strong> While significant rain in February is very unlikely, brief afternoon showers are not impossible. The tropics are rarely 100% predictable. The probability is low, but if a shower occurs, visibility can drop quickly — reduce your speed and turn on headlights.</div>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+
+  <!-- ── SECTION 5: TOLLS ── -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-number">5</div>
+      <h2>Toll Plazas &mdash; What to Expect</h2>
+    </div>
+    <div class="section-body">
+
+      <p>Route 27 is a privately operated toll highway (concession held by Globalvia). You will pass through four main toll plazas, plus a possible exit ramp toll. Come prepared with either a credit card or small-denomination bills.</p>
+
+      <ul class="toll-list" style="margin-bottom:20px;">
+        <li class="toll-item">
+          <div class="toll-num">1</div>
+          <div class="toll-text">
+            <strong>Escazú Toll Plaza</strong>
+            <span>First plaza westbound, just past the Escazú commercial area. You will reach this within 10–15 min of leaving the airport area.</span>
+          </div>
+        </li>
+        <li class="toll-item">
+          <div class="toll-num">2</div>
+          <div class="toll-text">
+            <strong>San Rafael Toll Plaza</strong>
+            <span>Located in the Santa Ana / San Rafael area as the highway begins its ascent toward the mountain pass.</span>
+          </div>
+        </li>
+        <li class="toll-item">
+          <div class="toll-num">3</div>
+          <div class="toll-text">
+            <strong>Atenas Toll Plaza</strong>
+            <span>Mid-route, near the town of Atenas. The highway is beginning to descend toward the Pacific at this point.</span>
+          </div>
+        </li>
+        <li class="toll-item">
+          <div class="toll-num">4</div>
+          <div class="toll-text">
+            <strong>Pozón Toll Plaza</strong>
+            <span>Near the Orotina area, toward the end of Route 27. You are approaching the Pacific coast here.</span>
+          </div>
+        </li>
+        <li class="toll-item">
+          <div class="toll-num" style="background:var(--teal);">+</div>
+          <div class="toll-text">
+            <strong>Jacó Exit Ramp Toll (possible)</strong>
+            <span>An additional ramp toll may apply at the exit toward Jacó / Route 34. Smaller amount.</span>
+          </div>
+        </li>
+      </ul>
+
+      <div class="info-grid">
+        <div class="info-card">
+          <div class="card-label">Estimated Total Toll Cost</div>
+          <div class="card-value">$6 – $10 USD</div>
+          <div class="card-detail">For a standard passenger vehicle (Class 1). Fares updated January 1, 2026.</div>
+        </div>
+        <div class="info-card">
+          <div class="card-label">Accepted Payment Methods</div>
+          <div class="card-value">Cash &bull; Credit / Debit</div>
+          <div class="card-detail">USD accepted but change returned in colones. Credit cards now accepted at all booths.</div>
+        </div>
+      </div>
+
+      <div class="callout gold" style="margin-top:18px;">
+        <div class="callout-icon">&#128179;</div>
+        <div class="callout-body">
+          <p><strong>Pro Tip:</strong> Carry a small envelope with $15–$20 in USD small bills (fives and ones) or an equivalent in Costa Rican colones as a backup. Your credit card will work at toll booths, but having cash prevents any friction if there is a card reader issue. <strong>Notify your bank before travel</strong> — multiple small charges in a foreign country can trigger a fraud alert and lock your card.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── SECTION 6: SAFETY & DRIVING TIPS ── -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-number">6</div>
+      <h2>Safety, Driving Tips &amp; Essential Know-How</h2>
+    </div>
+    <div class="section-body">
+
+      <ul class="tips-list">
+        <li class="tip-item">
+          <div class="tip-icon">&#128249;</div>
+          <div class="tip-text"><strong>Use Waze, not Google Maps.</strong> Waze is the dominant navigation app in Costa Rica and is actively maintained by a large local user base. It provides real-time bridge alerts, traffic slowdowns, police locations, and road hazards. Download it before you land and search for <em>"Los Sueños Resort and Marina."</em> Keep an offline map downloaded as a backup.</div>
+        </li>
+        <li class="tip-item">
+          <div class="tip-icon">&#128196;</div>
+          <div class="tip-text"><strong>Documents to carry at all times.</strong> Keep your <strong>original US passport</strong> (not a photocopy), your <strong>original driver's license</strong>, your <strong>rental car contract</strong>, and your <strong>insurance documents</strong> accessible in the vehicle. Costa Rican traffic police (Tránsitos) conduct routine stops and are professional and courteous. A valid US driver's license is fully sufficient — no international permit is required.</div>
+        </li>
+        <li class="tip-item">
+          <div class="tip-icon">&#127774;</div>
+          <div class="tip-text"><strong>Arrive before dark if at all possible.</strong> Costa Rica's roads outside the San José metro area often lack reflective lane markings and adequate lighting. Wildlife — including large iguanas, sloths, and dogs — can appear on the road without warning. Aim to reach Los Sueños by 6:00 PM. If you cannot avoid traveling after dark, reduce your speed, stay alert, and use your high beams where safe to do so.</div>
+        </li>
+        <li class="tip-item">
+          <div class="tip-icon">&#128663;</div>
+          <div class="tip-text"><strong>Drive defensively, not aggressively.</strong> Costa Rican drivers frequently change lanes without signaling, make abrupt merges, and pass on highways at high speed. Road rage is not the norm — this is simply the local driving culture. Maintain safe following distances, anticipate unpredictable lane changes, and do not respond to aggressive driving behavior.</div>
+        </li>
+        <li class="tip-item">
+          <div class="tip-icon">&#128683;</div>
+          <div class="tip-text"><strong>Do not stop on isolated stretches of road.</strong> Near SJO, there have been documented incidents where vehicles are deliberately struck with stones or debris to force a roadside stop, where the occupants are then robbed. If your vehicle is struck or you hear an unusual noise in an isolated area, drive to the nearest gas station, hotel, or populated area before stopping and inspecting. Route 27 itself is generally safe, but this caution applies to secondary roads.</div>
+        </li>
+        <li class="tip-item">
+          <div class="tip-icon">&#128204;</div>
+          <div class="tip-text"><strong>Speed limits are in km/h, not mph.</strong> On Route 27 the limit is typically 80–100 km/h (50–62 mph). In towns: 40–60 km/h (25–37 mph). Speed cameras and police with radar guns are active on Route 27. Fines are substantial and are assessed against the rental vehicle if the driver cannot be identified. Drive at or slightly below the posted limit.</div>
+        </li>
+        <li class="tip-item">
+          <div class="tip-icon">&#9989;</div>
+          <div class="tip-text"><strong>Rental car insurance — verify before you go.</strong> Costa Rica requires mandatory third-party liability (TPL) insurance, which most rental companies include. However, <strong>many US credit cards that offer rental car coverage do not cover the Costa Rican mandatory liability component.</strong> Verify with your credit card company before declining any rental insurance. A zero-deductible CDW (collision damage waiver) is strongly advisable given local road conditions.</div>
+        </li>
+        <li class="tip-item">
+          <div class="tip-icon">&#9981;</div>
+          <div class="tip-text"><strong>Fuel up before leaving the San José area.</strong> Gas stations become less frequent as you head toward the coast. There are stations in Orotina (near the end of Route 27) and near Jacó, but do not assume availability. Fill your tank at one of the many gas stations near the airport or along Route 27 early in your journey. Gas stations in Costa Rica are <em>full service</em> — attendants pump the gas. Confirm the gauge resets to zero before they begin, and verify your total before paying.</div>
+        </li>
+        <li class="tip-item">
+          <div class="tip-icon">&#127944;</div>
+          <div class="tip-text"><strong>Speed bumps ("topes") appear without warning.</strong> Unmarked or poorly marked speed bumps are common on roads in Costa Rica, including near toll plazas and approaching towns. Reduce speed when approaching any populated area and watch for the road surface changing.</div>
+        </li>
+      </ul>
+
+      <div class="gold-rule" style="margin:22px 0;"></div>
+
+      <div class="emergency-box">
+        <h4>Emergency &amp; Assistance Contacts</h4>
+        <div class="emergency-grid">
+          <div class="emergency-item">
+            <span class="e-label">Costa Rica Emergency (Police / Fire / Ambulance)</span>
+            <span class="e-value">&#128222; 9-1-1</span>
+          </div>
+          <div class="emergency-item">
+            <span class="e-label">Route 27 Concessionaire Control Center</span>
+            <span class="e-value">&#128222; +506 2588-4040</span>
+          </div>
+          <div class="emergency-item">
+            <span class="e-label">Costa Rica Traffic Police (Tránsitos)</span>
+            <span class="e-value">&#128222; +506 2523 3300</span>
+          </div>
+          <div class="emergency-item">
+            <span class="e-label">US Embassy San José (emergencies)</span>
+            <span class="e-value">&#128222; +506 2519-2000</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── SECTION 7: ABOUT LOS SUEÑOS ── -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-number">7</div>
+      <h2>About Los Sueños Resort &amp; Marina</h2>
+    </div>
+    <div class="section-body">
+
+      <p>Los Sueños Resort &amp; Marina is consistently regarded as one of the finest resort destinations in Latin America — a 1,100-acre private enclave set on the sheltered waters of Herradura Bay, Costa Rica's Central Pacific coast. Here is what to expect upon arrival.</p>
+
+      <div class="info-grid" style="margin-bottom:20px;">
+        <div class="info-card">
+          <div class="card-label">Location</div>
+          <div class="card-value">Playa Herradura, Garabito</div>
+          <div class="card-detail">Puntarenas Province, Central Pacific Coast</div>
+        </div>
+        <div class="info-card">
+          <div class="card-label">Property Size</div>
+          <div class="card-value">1,100 Acres</div>
+          <div class="card-detail">Including 600 acres of private rainforest reserve</div>
+        </div>
+        <div class="info-card">
+          <div class="card-label">Marina</div>
+          <div class="card-value">200 Wet Slips</div>
+          <div class="card-detail">First government-approved marina in Costa Rica. Official port of entry.</div>
+        </div>
+        <div class="info-card">
+          <div class="card-label">Security</div>
+          <div class="card-value">24/7 Gated &amp; Staffed</div>
+          <div class="card-detail">One of the safest communities on the Pacific coast</div>
+        </div>
+      </div>
+
+      <ul class="tips-list">
+        <li class="tip-item">
+          <div class="tip-icon">&#127993;</div>
+          <div class="tip-text"><strong>Sport Fishing — You Have Arrived at the Right Time.</strong> Los Sueños is widely known as the <em>"Billfish Capital of the World."</em> Deep water rises close to shore, and February falls squarely within <strong>peak sailfish season (December–April).</strong> Marlin, mahi-mahi, tuna, wahoo, and roosterfish are all active. Full-day and half-day charters depart from the marina daily.</div>
+        </li>
+        <li class="tip-item">
+          <div class="tip-icon">&#9971;</div>
+          <div class="tip-text"><strong>La Iguana Championship Golf Course.</strong> An 18-hole course designed by Ted Robinson, set within tropical rainforest with ocean views. Considered among Costa Rica's premier golf experiences.</div>
+        </li>
+        <li class="tip-item">
+          <div class="tip-icon">&#127829;</div>
+          <div class="tip-text"><strong>Dining options on-site.</strong> The Marina Village hosts approximately 10 restaurants and bars, ranging from casual dockside dining to the Lanterna Italian Steakhouse, Bambú sushi, and Al Fresco beach club fare. No need to leave the property for excellent meals.</div>
+        </li>
+        <li class="tip-item">
+          <div class="tip-icon">&#127795;</div>
+          <div class="tip-text"><strong>Nearby: Carara National Park.</strong> Just 15 minutes north of the resort along Route 34, Carara is a world-renowned birding destination and the best place in Costa Rica to observe <strong>scarlet macaws</strong> in the wild — a truly unforgettable experience, especially at dawn or dusk when the flocks fly over.</div>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+
+  <!-- ── PRE-DEPARTURE CHECKLIST ── -->
+  <div class="summary-section">
+    <h2>Your Pre-Departure Checklist &mdash; At a Glance</h2>
+    <ul class="summary-list">
+      <li class="summary-item">
+        <span class="check">&#10003;</span>
+        <span><strong>Download Waze</strong> and pre-load "Los Sueños Resort and Marina, Herradura" before leaving the terminal.</span>
+      </li>
+      <li class="summary-item">
+        <span class="check">&#10003;</span>
+        <span><strong>Depart between 9:30 AM and 12:30 PM</strong> on weekdays for the smoothest journey. On Sundays, verify Route 27 reversal status and be on the road before noon or after 7:00 PM.</span>
+      </li>
+      <li class="summary-item">
+        <span class="check">&#10003;</span>
+        <span><strong>Add 30–60 minutes to your ETA</strong> for the Tárcoles Bridge delay — now in effect through March 27, 2026.</span>
+      </li>
+      <li class="summary-item">
+        <span class="check">&#10003;</span>
+        <span><strong>Carry your passport, driver's license, rental contract, and insurance documents</strong> in the vehicle at all times.</span>
+      </li>
+      <li class="summary-item">
+        <span class="check">&#10003;</span>
+        <span><strong>Have $15–$20 in small USD bills</strong> (or colones) for tolls, plus your credit card. Notify your bank of your Costa Rica travel dates.</span>
+      </li>
+      <li class="summary-item">
+        <span class="check">&#10003;</span>
+        <span><strong>Fill your gas tank</strong> before leaving the greater San José area. Gas stations become sparse closer to the coast.</span>
+      </li>
+      <li class="summary-item">
+        <span class="check">&#10003;</span>
+        <span><strong>Aim to arrive at Los Sueños before 6:00 PM</strong> to avoid night driving on unfamiliar roads.</span>
+      </li>
+      <li class="summary-item">
+        <span class="check">&#10003;</span>
+        <span><strong>Weather is largely dry and warm.</strong> Cold Front No. 17 is passing — expect clearing by tomorrow. Pack sunscreen, polarized sunglasses, and light breathable clothing.</span>
+      </li>
+      <li class="summary-item">
+        <span class="check">&#10003;</span>
+        <span>Save key emergency numbers: Costa Rica Emergency <strong>911</strong> &bull; Route 27 Control Center <strong>+506 2588-4040</strong> &bull; US Embassy <strong>+506 2519-2000</strong></span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- ── SOURCES ── -->
+  <div class="sources-section">
+    <div class="sources-header">
+      <h2>&#128279; Sources &amp; References</h2>
+    </div>
+    <div class="sources-body">
+      <p style="font-size:.85rem; color:var(--text-muted); margin-bottom:18px;">All information in this report is drawn from the primary sources listed below. Road conditions are subject to change; verify with Waze and the Route 27 Control Center before departure.</p>
+      <div class="sources-grid">
+
+        <div class="source-item">
+          <span class="source-category">Road Work</span>
+          <div class="source-link">
+            <a href="https://ticotimes.net/2026/02/21/one-lane-travel-returns-to-costa-ricas-tarcoles-bridge" target="_blank" rel="noopener">One-Lane Travel Returns to Tárcoles Bridge</a>
+            <span class="source-pub">Tico Times &mdash; February 21, 2026</span>
+          </div>
+        </div>
+
+        <div class="source-item">
+          <span class="source-category">Road Work</span>
+          <div class="source-link">
+            <a href="https://qcostarica.com/ruta-34-over-tarcoles-river-bridge-with-regulated-traffic-starting-feb-23/" target="_blank" rel="noopener">Ruta 34 Bridge Regulated Traffic Starting Feb 23</a>
+            <span class="source-pub">Q Costa Rica &mdash; February 2026</span>
+          </div>
+        </div>
+
+        <div class="source-item">
+          <span class="source-category">Road Work</span>
+          <div class="source-link">
+            <a href="https://www.travelandtourworld.com/news/article/tarcoles-bridge-construction-update-2026-one-lane-travel-returns-to-costa-ricas-iconic-route-34/" target="_blank" rel="noopener">Tárcoles Bridge Construction Update 2026</a>
+            <span class="source-pub">Travel &amp; Tour World &mdash; February 2026</span>
+          </div>
+        </div>
+
+        <div class="source-item">
+          <span class="source-category">Road Work</span>
+          <div class="source-link">
+            <a href="https://www.nacion.com/el-pais/preparese-paso-regulado-en-el-puente-sobre-el-rio/WBQ7YBSOA5GTHFTPWYCD3EFZRA/story/" target="_blank" rel="noopener">Prepárese: paso regulado en el puente sobre el río Tárcoles</a>
+            <span class="source-pub">La Nación &mdash; February 2026</span>
+          </div>
+        </div>
+
+        <div class="source-item">
+          <span class="source-category">Road Work</span>
+          <div class="source-link">
+            <a href="https://crhoy.com/nacionales/paso-por-puente-del-rio-tarcoles-sera-de-un-carril-y-tendra-cierres-nocturnos/" target="_blank" rel="noopener">Paso por puente del río Tárcoles será de un carril y tendrá cierres nocturnos</a>
+            <span class="source-pub">CR Hoy &mdash; February 2026</span>
+          </div>
+        </div>
+
+        <div class="source-item">
+          <span class="source-category">Traffic</span>
+          <div class="source-link">
+            <a href="https://ticotimes.net/2026/02/17/route-27-sets-reversible-lanes-for-sunday-return-traffic" target="_blank" rel="noopener">Route 27 Sets Reversible Lanes for Sunday Return</a>
+            <span class="source-pub">Tico Times &mdash; February 17, 2026</span>
+          </div>
+        </div>
+
+        <div class="source-item">
+          <span class="source-category">Traffic</span>
+          <div class="source-link">
+            <a href="https://www.nacion.com/el-pais/ruta-27-tendra-reversibilidad-este-domingo-22-de/XCOW5HXDG5FWXHTTBTUDCAHXNQ/story/" target="_blank" rel="noopener">Ruta 27 tendrá reversibilidad este domingo 22 de febrero</a>
+            <span class="source-pub">La Nación &mdash; February 22, 2026</span>
+          </div>
+        </div>
+
+        <div class="source-item">
+          <span class="source-category">Traffic</span>
+          <div class="source-link">
+            <a href="https://www.teletica.com/nacional/ruta-27-tendra-reversibilidad-este-domingo-por-regreso-a-clases_402711" target="_blank" rel="noopener">Ruta 27 tendrá reversibilidad este domingo por regreso a clases</a>
+            <span class="source-pub">Teletica &mdash; February 2026</span>
+          </div>
+        </div>
+
+        <div class="source-item">
+          <span class="source-category">Traffic</span>
+          <div class="source-link">
+            <a href="https://ticotimes.net/2026/01/03/costa-ricas-route-27-goes-one-way-sundays-in-january" target="_blank" rel="noopener">Costa Rica's Route 27 Goes One-Way Sundays in January</a>
+            <span class="source-pub">Tico Times &mdash; January 3, 2026</span>
+          </div>
+        </div>
+
+        <div class="source-item">
+          <span class="source-category">Traffic</span>
+          <div class="source-link">
+            <a href="https://explorecostarica.org/mopt-announces-route-27-traffic-plan-for-easier-january-returns/" target="_blank" rel="noopener">MOPT Announces Route 27 Traffic Plan</a>
+            <span class="source-pub">Explore Costa Rica</span>
+          </div>
+        </div>
+
+        <div class="source-item">
+          <span class="source-category">Weather</span>
+          <div class="source-link">
+            <a href="https://www.nacion.com/sucesos/empuje-frio-elevara-vientos-hasta-85-kmh-y/H4RESPDIMZFFFLYRO2APUFSMCY/story/" target="_blank" rel="noopener">Empuje frío elevará vientos hasta 85 km/h — Cold Front No. 17</a>
+            <span class="source-pub">La Nación &mdash; February 22, 2026</span>
+          </div>
+        </div>
+
+        <div class="source-item">
+          <span class="source-category">Weather</span>
+          <div class="source-link">
+            <a href="https://www.imn.ac.cr/avisos-meteorologicos" target="_blank" rel="noopener">Avisos Meteorológicos — IMN Costa Rica</a>
+            <span class="source-pub">Instituto Meteorológico Nacional (IMN)</span>
+          </div>
+        </div>
+
+        <div class="source-item">
+          <span class="source-category">Weather</span>
+          <div class="source-link">
+            <a href="https://observador.cr/nuevo-empuje-frio-aumentara-los-vientos-y-lluvias-desde-este-domingo-en-costa-rica/" target="_blank" rel="noopener">Nuevo empuje frío aumentará los vientos y lluvias desde este domingo</a>
+            <span class="source-pub">El Observador CR &mdash; February 22, 2026</span>
+          </div>
+        </div>
+
+        <div class="source-item">
+          <span class="source-category">Weather</span>
+          <div class="source-link">
+            <a href="https://weatherspark.com/y/15485/Average-Weather-in-Jac%C3%B3-Costa-Rica-Year-Round" target="_blank" rel="noopener">Average Weather in Jacó, Costa Rica Year-Round</a>
+            <span class="source-pub">WeatherSpark</span>
+          </div>
+        </div>
+
+        <div class="source-item">
+          <span class="source-category">Weather</span>
+          <div class="source-link">
+            <a href="https://boattripsclub.com/costa-rica/february-weather-in-costa-rica/" target="_blank" rel="noopener">February Weather in Costa Rica</a>
+            <span class="source-pub">Boat Trips Club</span>
+          </div>
+        </div>
+
+        <div class="source-item">
+          <span class="source-category">Weather</span>
+          <div class="source-link">
+            <a href="https://www.costaricavibes.com/dry-season/" target="_blank" rel="noopener">Costa Rica Dry Season Guide</a>
+            <span class="source-pub">Costa Rica Vibes</span>
+          </div>
+        </div>
+
+        <div class="source-item">
+          <span class="source-category">Tolls</span>
+          <div class="source-link">
+            <a href="https://blog.ventucr.com/toll-roads-in-costa-rica-what-you-need-to-know-before-you-drive/" target="_blank" rel="noopener">Toll Roads in Costa Rica — What You Need to Know</a>
+            <span class="source-pub">Ventu CR</span>
+          </div>
+        </div>
+
+        <div class="source-item">
+          <span class="source-category">Tolls</span>
+          <div class="source-link">
+            <a href="https://ticosland.com/drivers-face-higher-tolls-on-ruta-27-starting-2026/" target="_blank" rel="noopener">Drivers Face Higher Tolls on Ruta 27 Starting 2026</a>
+            <span class="source-pub">Ticosland &mdash; 2026</span>
+          </div>
+        </div>
+
+        <div class="source-item">
+          <span class="source-category">Tolls</span>
+          <div class="source-link">
+            <a href="https://www.twoweeksincostarica.com/highway-tolls-costa-rica/" target="_blank" rel="noopener">Highway Tolls in Costa Rica</a>
+            <span class="source-pub">Two Weeks in Costa Rica</span>
+          </div>
+        </div>
+
+        <div class="source-item">
+          <span class="source-category">Driving</span>
+          <div class="source-link">
+            <a href="https://mytanfeet.com/about-cr/tips-for-driving-in-costa-rica/" target="_blank" rel="noopener">Tips for Driving in Costa Rica</a>
+            <span class="source-pub">My Tan Feet</span>
+          </div>
+        </div>
+
+        <div class="source-item">
+          <span class="source-category">Driving</span>
+          <div class="source-link">
+            <a href="https://www.adobecar.com/en/travel-costa-rica/driving-in-costa-rica/" target="_blank" rel="noopener">Driving in Costa Rica — Complete Guide</a>
+            <span class="source-pub">Adobe Rent a Car</span>
+          </div>
+        </div>
+
+        <div class="source-item">
+          <span class="source-category">Driving</span>
+          <div class="source-link">
+            <a href="https://en.jumbocar-costarica.com/discover-costa-rica/prepare-your-trip/driving-in-costa-rica" target="_blank" rel="noopener">Driving in Costa Rica 2026</a>
+            <span class="source-pub">Jumbo Car Costa Rica</span>
+          </div>
+        </div>
+
+        <div class="source-item">
+          <span class="source-category">Driving</span>
+          <div class="source-link">
+            <a href="https://www.twoweeksincostarica.com/road-conditions-specific-routes-costa-rica/" target="_blank" rel="noopener">Road Conditions on Specific Routes</a>
+            <span class="source-pub">Two Weeks in Costa Rica</span>
+          </div>
+        </div>
+
+        <div class="source-item">
+          <span class="source-category">Fishing</span>
+          <div class="source-link">
+            <a href="https://fishcostarica.com/los-suenos-marina-deep-sea-fishing-what-anglers-need-to-know-in-2026/" target="_blank" rel="noopener">Los Sueños Marina Deep-Sea Fishing 2026</a>
+            <span class="source-pub">Fish Costa Rica</span>
+          </div>
+        </div>
+
+        <div class="source-item">
+          <span class="source-category">Fishing</span>
+          <div class="source-link">
+            <a href="https://fishcostarica.com/january-march-fishing-predictions-for-2026-in-costa-rica/" target="_blank" rel="noopener">January–March Fishing Predictions for 2026</a>
+            <span class="source-pub">Fish Costa Rica</span>
+          </div>
+        </div>
+
+        <div class="source-item">
+          <span class="source-category">Resort</span>
+          <div class="source-link">
+            <a href="https://jacotourdesk.com/blog/los-suenos-resort-marina/" target="_blank" rel="noopener">Los Sueños Resort &amp; Marina — Ultimate Guide 2026</a>
+            <span class="source-pub">Jacó Tour Desk</span>
+          </div>
+        </div>
+
+        <div class="source-item">
+          <span class="source-category">Resort</span>
+          <div class="source-link">
+            <a href="https://www.hrgvacations.com/getting-to-los-suenos" target="_blank" rel="noopener">Getting to Los Sueños</a>
+            <span class="source-pub">HRG Vacations</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ── LEGAL DISCLAIMER ── -->
+  <div style="margin-top:28px; background:#f7f6f4; border:1px solid #ddd9d3; border-top:3px solid #c8c3bc; border-radius:var(--radius); padding:22px 26px;">
+    <p style="font-family:'Arial',sans-serif; font-size:.7rem; font-weight:700; letter-spacing:.13em; text-transform:uppercase; color:#9c9590; margin-bottom:12px;">Legal Disclaimer</p>
+    <p style="font-family:'Arial',sans-serif; font-size:.76rem; line-height:1.7; color:#7a7470; margin-bottom:.6rem;">
+      This document is an independent informational travel brief compiled from publicly available third-party sources for general guidance purposes only. It does not constitute professional advice of any kind, including but not limited to legal, safety, transportation, or travel advice. The information contained herein is provided <strong style="color:#6b6560; font-weight:600;">"as is"</strong> without warranty of any kind, express or implied.
+    </p>
+    <p style="font-family:'Arial',sans-serif; font-size:.76rem; line-height:1.7; color:#7a7470; margin-bottom:.6rem;">
+      Road conditions, construction schedules, lane closures, traffic patterns, toll rates, and all other operational details described in this report are subject to change at any time and without prior notice. The author(s) of this report make no representation or warranty as to the accuracy, completeness, timeliness, or reliability of any information contained herein. Readers are solely responsible for independently verifying all road, weather, and travel conditions through official sources — including but not limited to Waze, the Route 27 Concessionaire Control Center (+506&nbsp;2588-4040), and Costa Rica's Ministry of Public Works and Transport (MOPT) — prior to and during travel.
+    </p>
+    <p style="font-family:'Arial',sans-serif; font-size:.76rem; line-height:1.7; color:#7a7470; margin-bottom:.6rem;">
+      To the fullest extent permitted by applicable law, the author(s) of this report expressly disclaim all liability for any loss, damage, injury, delay, inconvenience, or expense of any nature whatsoever — including without limitation personal injury, property damage, financial loss, or consequential loss — arising directly or indirectly from reliance on any information contained in this document, from road or weather conditions encountered during travel, or from any decision made based on this report.
+    </p>
+    <p style="font-family:'Arial',sans-serif; font-size:.76rem; line-height:1.7; color:#7a7470; margin-bottom:0;">
+      This report is produced independently and is not affiliated with, endorsed by, or issued on behalf of any government authority, tourism body, resort, hotel, rental car company, transportation operator, or concessionaire, including but not limited to MOPT, Globalvia, or any property mentioned herein. All third-party trademarks, service marks, and trade names referenced are the property of their respective owners. Use of this report constitutes acceptance of these terms.
+    </p>
+  </div>
+
+  <!-- ── FOOTER ── -->
+  <div class="report-footer">
+    <p>This report was prepared on <strong>February 23, 2026</strong> based on publicly available information from MOPT (Costa Rica Ministry of Public Works and Transport), Tico Times, Q Costa Rica, and additional travel research sources listed above. Road conditions are dynamic and can change without notice.</p>
+    <p style="margin-top:8px;">For real-time updates on bridge and highway conditions: <strong>Waze app</strong> &bull; Route 27 Control Center: <strong>+506 2588-4040</strong></p>
+    <p style="margin-top:12px; color:var(--text-muted); font-style:italic;">For questions or custom route inquiries, connect via <a href="https://www.linkedin.com/in/" target="_blank" rel="noopener" style="color:var(--text-muted); border-bottom:1px solid rgba(107,101,96,.35);">LinkedIn</a>.</p>
+  </div>
+
+</div><!-- /page-wrap -->
+</body>
+</html>
