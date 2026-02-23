@@ -22,6 +22,7 @@
 </head>
 <body>
 
+    {% if site.posts and site.posts.size > 0 %}
     <div class="controls">
         <label for="history">Select a report date: </label>
         
@@ -39,6 +40,9 @@
     </div>
 
     <iframe id="display-frame" src="{{ site.baseurl }}{{ site.posts.first.url }}"></iframe>
+    {% else %}
+      <p>No reports found in <code>_posts</code>.</p>
+    {% endif %}
 
 </body>
 </html>
