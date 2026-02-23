@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +14,7 @@
         /* Make the iframe large enough to read easily */
         iframe { 
             width: 100%; 
-            height: 80vh; /* 80% of the screen height */
+            height: 80vh; 
             border: 1px solid #ccc; 
             border-radius: 4px;
         }
@@ -24,7 +26,6 @@
         <label for="history">Select a report date: </label>
         
         <select id="history" onchange="document.getElementById('display-frame').src = this.value;">
-            
             <option value="{{ site.baseurl }}{{ site.posts.first.url }}">
                 Latest Report ({{ site.posts.first.date | date: "%B %d, %Y" }})
             </option>
