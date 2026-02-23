@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daily route reports</title>
+    <title>Daily Route Reports</title>
     <style>
         body { font-family: sans-serif; margin: 20px; }
         .controls { margin-bottom: 20px; }
@@ -26,7 +26,7 @@
         <select id="history" onchange="document.getElementById('display-frame').src = this.value;">
             
             <option value="{{ site.baseurl }}{{ site.posts.first.url }}">
-                Latest Update ({{ site.posts.first.date | date: "%B %d, %Y" }})
+                Latest Report ({{ site.posts.first.date | date: "%B %d, %Y" }})
             </option>
             
             {% for post in site.posts offset:1 %}
